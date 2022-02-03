@@ -1,0 +1,13 @@
+[{
+    "name": "nama",
+    "type": "string",
+    "mode": "NULLABLE"
+}, {
+    "name": "phone",
+    "type": "integer",
+    "mode": "NULLABLE"
+}, {
+    "name": "email",
+    "type": "string",
+    "mode": "NULLABLE"
+}]
