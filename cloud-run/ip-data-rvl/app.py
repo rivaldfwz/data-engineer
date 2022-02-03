@@ -24,5 +24,9 @@ def handlePost():
    print("Message published.")
    return json.dumps({'message':'success'}), 200
 
+@app.route('/merkle-id-get',methods=['GET'])
+def handleGet():
+    return json.dumps({'message':'success'}), 200
+
 if __name__ == "__main__":
-    app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
+    app.run(debug=True,host='0.0.0.0',port=8080)

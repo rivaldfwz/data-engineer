@@ -6,11 +6,11 @@ WORKDIR /app
 COPY . .
 
 # Install production depedencies
-RUN pip install Flask 
+RUN pip install Flask gunicorn
+RUN pip install gunicorn
 RUN apt-get update
 RUN pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 RUN pip install --upgrade google-cloud-pubsub
 
 # Run API
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD exec gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 app:app
